@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class 合計金額計算式 {
-    public 割引前合計金額 計算する(選択した食券たちの一覧 選択した食券たちの一覧, 販売中の食券の一覧 販売中の食券の一覧) {
+    public 割引前の合計金額 計算する(選択した食券たちの一覧 選択した食券たちの一覧, 販売中の食券の一覧 販売中の食券の一覧) {
         int 合計 = 0;
         for (選択した食券たち 選択した食券たち : 選択した食券たちの一覧.get選択した食券たちの一覧()){
             販売中の食券 対応する販売中の食券 = null;
@@ -20,6 +20,6 @@ public class 合計金額計算式 {
 
             合計 += 単価 * 枚数;
         }
-        return new 割引前合計金額(合計);
+        return new 割引前の合計金額(合計);
     }
 }

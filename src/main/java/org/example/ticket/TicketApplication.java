@@ -19,8 +19,8 @@ public class TicketApplication {
                 new 選択した食券たち("F4", 1),
                 new 選択した食券たち("F3", 2)
         )));
-        System.out.println("割引前合計金額: " + out.割引前合計金額().get割引前合計金額());
-        System.out.println("割引後合計金額: " + out.セット割後金額().getセット割後合計金額());
+        System.out.println("割引前合計金額: " + out.割引前の合計金額().get割引前の合計金額());
+        System.out.println("割引後合計金額: " + out.セット割後金額().getセット割引後の合計金額());
         System.out.println("獲得ポイント数: " + out.獲得ポイント数().get獲得ポイント数());
     }
 
