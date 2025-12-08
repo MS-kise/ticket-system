@@ -1,15 +1,13 @@
 package org.example.ticket.infrastructure;
 
 import org.example.ticket.domain.フードメニュー;
-import org.example.ticket.domain.販売中の食券;
-import org.example.ticket.domain.販売中の食券の一覧;
-import org.example.ticket.domain.選択した食券たちの一覧;
+import org.example.ticket.domain.取扱中のフード食券;
+import org.example.ticket.domain.取扱食券;
+import org.example.ticket.domain.食券明細;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Repository
 public class フードテーブル implements フードメニュー {
@@ -25,19 +23,20 @@ public class フードテーブル implements フードメニュー {
     );
 
     @Override
-    public 販売中の食券の一覧 取得する(選択した食券たちの一覧 選択した食券たちの一覧) {
-        List<販売中の食券> 販売中の食券リスト = new ArrayList<>();
-        for (var 選択した食券: 選択した食券たちの一覧.get選択した食券たちの一覧()) {
+    public 取扱中のフード食券 取得する(食券明細 食券明細) {
+        List<取扱食券> フードの食券リスト = new ArrayList<>();
+        for (var 選択した食券: 食券明細.get食券明細項目の一覧()) {
             for (var foodData: データベース) {
                 if (選択した食券.getID().equals(foodData.ID)) {
-                    販売中の食券リスト.add(new 販売中の食券(foodData.ID, foodData.name, foodData.price));
+                    フードの食券リスト.add(new 取扱食券(foodData.ID, foodData.name, foodData.price));
                     break;
                 }
             }
         }
-        return new 販売中の食券の一覧(販売中の食券リスト);
+        return new 取扱中のフード食券(フードの食券リスト);
     }
 
     public record FoodData(String ID, String name, int price) {
     }
+
 }

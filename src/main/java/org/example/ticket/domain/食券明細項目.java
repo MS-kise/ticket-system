@@ -1,11 +1,11 @@
 package org.example.ticket.domain;
 
-public class 選択した食券たち {
+public class 食券明細項目 {
 
     private final String ID;
     private final int 枚数;
 
-    public 選択した食券たち(String ID, int 枚数){
+    public 食券明細項目(String ID, int 枚数){
         this.ID = ID;
         this.枚数 = 枚数;
     }
